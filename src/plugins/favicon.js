@@ -13,6 +13,7 @@ export default class Favicon extends CorePlugin {
   constructor(core) {
     super(core)
     this._container = null
+    console.log('constructor')
     this.configure()
   }
 
@@ -29,6 +30,7 @@ export default class Favicon extends CorePlugin {
   }
 
   bindEvents() {
+    console.log('bindEvents')
     this.listenTo(this.core, Events.CORE_OPTIONS_CHANGE, this.configure)
     this.listenTo(this.core, Events.CORE_ACTIVE_CONTAINER_CHANGED, this.containerChanged)
     this.core.activeContainer && this.containerChanged()
